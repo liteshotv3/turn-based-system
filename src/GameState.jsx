@@ -17,10 +17,10 @@ export default class GameState extends React.Component {
             <div>gameCards: {this.printCardsJsonList(gameState.gameCards, "game-cards")}</div>
             <div>Current Player: {gameState.activePlayer}</div>
             <div>Phase: {gameState.phase}</div>
-            <div>players Deck: {this.printCards(gameState.pDeck)}</div>
-            <div>opponents Deck: {this.printCards(gameState.oDeck)}</div>
-            <div>players Hand: {this.printCards(gameState.pHand)}</div>
-            <div>opponents Hand: {this.printCards(gameState.oHand)}</div>
+            <div>players Deck: {this.printCards(gameState.p1.deck)}</div>
+            <div>opponents Deck: {this.printCards(gameState.p2.deck)}</div>
+            <div>players Hand: {this.printCards(gameState.p1.hand)}</div>
+            <div>opponents Hand: {this.printCards(gameState.p2.hand)}</div>
         </div>)
     }
 }

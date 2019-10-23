@@ -10,16 +10,16 @@ export default class Board extends React.Component {
         activePlayer: null,
         phase: null,
         gameCards: [],
-        pDeck: [],
-        pHand: [],
-        pResource: [],
-        pBackRow: [],
-        pFrontRow: [],
-        oResource: [],
-        oBackRow: [],
-        oFrontRow: [],
-        oHand: [],
-        oDeck: [],
+        // pDeck: [],
+        // pHand: [],
+        // pResource: [],
+        // pBackRow: [],
+        // pFrontRow: [],
+        // oResource: [],
+        // oBackRow: [],
+        // oFrontRow: [],
+        // oHand: [],
+        // oDeck: [],
         wounds: [],
         plus1s: [],
         minus1s: [],
@@ -70,32 +70,46 @@ export default class Board extends React.Component {
         })
     }
 
-    setUpGame = () => {
-        const p1MainIndex = AllCards.findIndex(card => card._id === "MNB-7");
-        const p2MainIndex = AllCards.findIndex(card => card._id === "MNB-79");
-        const player1sDeck = [...AllCards.filter(card => card.affiliation === "Avengers" && !card.isMC)]
-        const player2sDeck = [...AllCards.filter(card => card.affiliation === "Villains" && !card.isMC)]
-        const gameCards = [...player1sDeck, ...player2sDeck, AllCards[p1MainIndex], AllCards[p2MainIndex]]
-
-        const pDeck = [];
-        const oDeck = [];
-
-        for (let i = 0; i < player1sDeck.length; i++) {
-            pDeck.push(i)
+    setUpGame = (numberOfPlayers = 2) => {
+        const defaultPlayerState = {
+            deck: [],
+            hand: [],
+            resource: [],
+            backRow: [],
+            frontRow: [],
         }
-        for (let i = 0; i < player2sDeck.length; i++) {
-            oDeck.push(i + player1sDeck.length)
+        const playerState = {};
+        for(let i = 1; i < numberOfPlayers + 1; i++) {
+            playerState[`p${i}`] = { ...defaultPlayerState }
         }
-        // console.log({ pDeck, oDeck, gameCards})
+
+        this.setState({ ...playerState })
+
+        // const p1MainIndex = AllCards.findIndex(card => card._id === "MNB-7");
+        // const p2MainIndex = AllCards.findIndex(card => card._id === "MNB-79");
+        // const player1sDeck = [...AllCards.filter(card => card.affiliation === "Avengers" && !card.isMC)]
+        // const player2sDeck = [...AllCards.filter(card => card.affiliation === "Villains" && !card.isMC)]
+        // const gameCards = [...player1sDeck, ...player2sDeck, AllCards[p1MainIndex], AllCards[p2MainIndex]]
+
+        // const pDeck = [];
+        // const oDeck = [];
+
+        // for (let i = 0; i < player1sDeck.length; i++) {
+        //     pDeck.push(i)
+        // }
+        // for (let i = 0; i < player2sDeck.length; i++) {
+        //     oDeck.push(i + player1sDeck.length)
+        // }
+        // // console.log({ pDeck, oDeck, gameCards})
         
-        //give cards gameIds
-        this.setState({
-            gameCards,
-            pDeck,
-            oDeck,
-            pHand: [gameCards.length - 2],
-            oHand: [gameCards.length - 1],
-        })
+        // //give cards gameIds
+        // this.setState({
+        //     gameCards,
+        //     pDeck,
+        //     oDeck,
+        //     pHand: [gameCards.length - 2],
+        //     oHand: [gameCards.length - 1],
+        // })
     }
     
     shuffleZone = zone => {
@@ -118,7 +132,7 @@ export default class Board extends React.Component {
     render() {
         return <div className="board">
             <div className="turn-number">turn: { this.state.turn }</div>
-            <GameState gameState={this.state}/>
+            {(this.state.p1 && this.state.p2) && <GameState gameState={this.state}/>}
             <div className="end-turn">
                 <button onClick={this.startGame}>Start Game</button>
             </div>
