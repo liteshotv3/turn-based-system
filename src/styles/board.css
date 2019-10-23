@@ -1,0 +1,25 @@
+.board {
+    margin: 20px 32px;
+    height: 100%;
+    border: 1px solid black;
+    /* display: flex; */
+}
+
+.board .turn-number {
+    text-align: "center",
+}
+
+.board .end-turn {
+    border: 1px solid blue;
+    text-align: center;
+}
+
+.board .row{
+    border: 1px solid black;
+}
+
+.board .card {
+    width: 300px;
+    height: 400px;
+    border: 1px solid black;
+}
