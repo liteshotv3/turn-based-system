@@ -6,12 +6,18 @@ export default class Card extends React.Component {
         const gotCard = cards.find(card => card._id === this.props.id);
         this.setState(gotCard)
     }
+
+    card = () => this.props.gameCards[this.props.cardNumber];
+
+    name = () => {
+
+    }
     render() {
-        console.log('loading card:', this.props.id)
-        console.log('state:', this.state)
+        // console.log('loading card:', this.props.id)
+        // console.log('state:', this.state)
         return (
             <div className="card">
-                {/* <div>{this.state.name}</div> */}
+                <span className="name">{this.card().name}</span>
             </div>
         )
     }
