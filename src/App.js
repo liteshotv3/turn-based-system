@@ -1,12 +1,17 @@
 import './App.css';
 // import Menu from './Menu';
 import Gameboard from './Gameboard'
+import tokens from './config/marvelUnited.js'
+import Debug from './Debug';
 
 function App() {
   return (
     <div className="App">
       {/* <Menu /> */}
-      <Gameboard />
+      <Debug>{tokens}</Debug>
+      <Gameboard
+        tokens={tokens}
+      />
     </div>
   );
 }
