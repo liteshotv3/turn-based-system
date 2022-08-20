@@ -9,3 +9,13 @@
 .red-border {
   border: 1px solid red !important;
 }
+
+.debug-menu {
+  position: absolute;
+  width: 200px;
+  right: 0;
+  border: 3px solid black;
+  background-color: grey;
+  color: #CCC;
+  z-index: 10;
+}
