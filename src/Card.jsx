@@ -1,24 +1,14 @@
-import React from 'react';
-import { cards } from "./constants/cardDatabase";
+import React from 'react'
 
-export default class Card extends React.Component {
-    componentDidMount() {
-        const gotCard = cards.find(card => card._id === this.props.id);
-        this.setState(gotCard)
-    }
+function Card(props) {
+    const { text } = props
 
-    card = () => this.props.gameCards[this.props.cardNumber];
-
-    name = () => {
-
-    }
-    render() {
-        // console.log('loading card:', this.props.id)
-        // console.log('state:', this.state)
-        return (
-            <div className="card">
-                <span className="name">{this.card().name}</span>
-            </div>
-        )
-    }
+    return <div className="card border col-1 mx-1 content-center">
+        <div className="card-body">
+            <div className="card-title">{text}</div>
+            {/* <div className="card-body">card-body</div> */}
+        </div>
+    </div>
 }
+
+export default Card
