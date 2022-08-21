@@ -1,7 +1,7 @@
 import './App.css';
 // import Menu from './Menu';
 import Gameboard from './Gameboard'
-import tokens from './config/marvelUnited.js'
+import { tokens, zones } from './config/marvelUnited.js'
 import Debug from './Debug';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Debug>{tokens}</Debug>
       <Gameboard
         tokens={tokens}
+        zones={zones}
       />
     </div>
   );

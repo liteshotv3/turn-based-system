@@ -2,8 +2,16 @@
   height: calc(100vh - 2rem);
 }
 
-.card-row {
+.zone {
   height: calc(16.6vh - (2rem/6))
+}
+
+.zone .name-display {
+  /* position: relative; */
+  /* left: 0; */
+  width: 100%;
+  z-index: 0;
+  color: #ccc
 }
 
 .red-border {
