@@ -3,12 +3,10 @@ import './App.css';
 import Gameboard from './Gameboard'
 import { tokens, zones } from './config/marvelUnited.js'
 
-console.log({ zones })
+// console.log({ zones })
 function App() {
   return (
     <div className="App">
-      {/* <Menu /> */}
-      {/* <Debug>{tokens}</Debug> */}
       <Gameboard
         tokens={tokens}
         zones={zones}

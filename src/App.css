@@ -3,7 +3,10 @@
 }
 
 .zone {
-  height: calc(16.6vh - (2rem/6));
+  border: 2px dashed rgb(222, 226, 230);
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
 }
 
 .zone .name-display {
@@ -19,6 +22,10 @@
 
 .zone .token {
   margin-top: 42px;
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
 
 .red-border {
@@ -33,4 +40,17 @@
   background-color: grey;
   color: #CCC;
   z-index: 10;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+       Introduced in IE 10.
+       See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+     */
+  -ms-user-select: none;
+  user-select: none;
 }
