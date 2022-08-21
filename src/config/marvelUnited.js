@@ -1,4 +1,4 @@
-const tokens = [
+export const tokens = [
     {
         name: "Iron Man",
         type: "figure",
@@ -10,4 +10,17 @@ const tokens = [
 
 ]
 
-export default tokens
+export const zones = [
+    {
+        name: "location",
+        quantity: 6
+    },
+    {
+        name: "villainDeck",
+        quantity: 1,
+    },
+    {
+        name: "heroDeck",
+        quantity: 4,
+    }
+]

@@ -16,17 +16,20 @@
 .end-turn {
     text-align: center;
 }
+
 .resource {
     background-color: black;
 }
+
 .front {
     background-color: rgb(148, 41, 41);
 }
+
 .back {
     background-color: lightseagreen;
 }
 
-.board .row{
+.board .row {
     display: flex;
     border: 1px solid black;
     height: 16.67vh;
@@ -34,7 +37,7 @@
     align-items: center;
 }
 
-.board .card {
+.board .token {
     width: 100px;
     height: 150px;
     margin: 0 10px;
@@ -42,18 +45,18 @@
     background-color: white;
 }
 
-.board .card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  background-color: rgb(37, 30, 128);
+.board .token {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    background-color: rgb(37, 30, 128);
 }
 
 /* On mouse-over, add a deeper shadow */
-.board .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.board .token:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card .name {
+.token .name {
     padding-left: 4px;
 }

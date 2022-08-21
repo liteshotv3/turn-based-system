@@ -1,6 +1,6 @@
 import Dragula from 'react-dragula';
 
-export const cardMovmentFunctionality = (componentBackingInstance) => {
+export const tokenZoneMovmentFunctionality = (componentBackingInstance) => {
     if (componentBackingInstance) {
         // console.log(document.body)
         let options = {
@@ -10,13 +10,13 @@ export const cardMovmentFunctionality = (componentBackingInstance) => {
             },
             moves: function (el, source, handle, sibling) {
                 // only tokens move
-                console.log("el", el.dataset.type)
-                console.log('el moving is token', el.dataset.type === "token", "el.dataset.type:", el.dataset.type)
+                // console.log("el", el.dataset.type)
+                // console.log('el moving is token', el.dataset.type === "token", "el.dataset.type:", el.dataset.type)
                 // return el.id === "token"
                 return el.dataset.type === "token"; // elements are always draggable by default
             },
             accepts: function (el, target, source, sibling) {
-                console.log("element accepting is zone", el.dataset.type === "zone", "el.dataset.type:", el.dataset.type)
+                // console.log("element accepting is zone", el.dataset.type === "zone", "el.dataset.type:", el.dataset.type)
                 return target.dataset.type === "zone"; // elements can be dropped in any of the `containers` by default
             },
             invalid: function (el, handle) {

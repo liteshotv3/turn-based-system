@@ -3,15 +3,22 @@
 }
 
 .zone {
-  height: calc(16.6vh - (2rem/6))
+  height: calc(16.6vh - (2rem/6));
 }
 
 .zone .name-display {
-  /* position: relative; */
-  /* left: 0; */
-  width: 100%;
+  text-transform: capitalize;
+  position: absolute;
+  left: 0;
+  /* width: 100%; */
   z-index: 0;
-  color: #ccc
+  color: #ccc;
+  height: 42px;
+  text-align: center;
+}
+
+.zone .token {
+  margin-top: 42px;
 }
 
 .red-border {
