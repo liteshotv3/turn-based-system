@@ -1,47 +1,26 @@
-import React from "react";
-import CardRow from './CardRow'
+import React, { useState } from "react";
+import Zone from "./Zone";
 import "./styles/dragula.min.css"
-import Dragula from 'react-dragula';
+import { cardMovmentFunctionality } from "./config/dragulaConfig";
 
-const gameConfig = {
-    cardRowsNumber: 6,
-}
+// const gameConfig = {
+//     cardRowsNumber: 6,
+// }
 
-function GameBoard() {
-    const dragulaDecorator = (componentBackingInstance) => {
-        if (componentBackingInstance) {
-            let options = {
-                isContainer: function (el) {
-                    return false; // only elements in drake.containers will be taken into account
-                },
-                moves: function (el, source, handle, sibling) {
-                    return true; // elements are always draggable by default
-                },
-                accepts: function (el, target, source, sibling) {
-                    return true; // elements can be dropped in any of the `containers` by default
-                },
-                invalid: function (el, handle) {
-                    return false; // don't prevent any drags from initiating by default
-                },
-                direction: 'vertical',             // Y axis is considered when determining where an element would be dropped
-                copy: false,                       // elements are moved by default, not copied
-                copySortSource: false,             // elements in copy-source containers can be reordered
-                revertOnSpill: false,              // spilling will put the element back where it was dragged from, if this is true
-                removeOnSpill: false,              // spilling will `.remove` the element, if this is true
-                mirrorContainer: document.body,    // set the element that gets mirror elements appended
-                ignoreInputTextSelection: true,     // allows users to select input text, see details below
-                slideFactorX: 0,               // allows users to select the amount of movement on the X axis before it is considered a drag instead of a click
-                slideFactorY: 0,               // allows users to select the amount of movement on the Y axis before it is considered a drag instead of a click
-            }
-            Dragula([...componentBackingInstance.children], options);
-        }
-    }
+function GameBoard(props) {
+    const { tokens, zones } = props
+    co
 
-
-    return <div className="gameboard container mx-3 mt-3 mb-3" ref={dragulaDecorator}>
+    return <div
+        ref={cardMovmentFunctionality}
+        id="gameboard"
+        className="gameboard container mx-3 mt-3 mb-3"
+    >
         {
-            [...Array(gameConfig.cardRowsNumber)]
-                .map((e, i) => <CardRow
+            // [...Array(gameConfig.cardRowsNumber)]
+            zones
+                .map((zoneInfo, i) => <Zone
+                    info={zoneInfo}
                     key={`card-row-${i}`}
                     rowNumber={i} />)
         }
