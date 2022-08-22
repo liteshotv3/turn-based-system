@@ -22,7 +22,7 @@ export const tokenZoneMovmentFunctionality = (componentBackingInstance) => {
             invalid: function (el, handle) {
                 return false; // don't prevent any drags from initiating by default
             },
-            direction: 'vertical',             // Y axis is considered when determining where an element would be dropped
+            direction: 'horizontal',             // Y axis is considered when determining where an element would be dropped
             copy: false,                       // elements are moved by default, not copied
             copySortSource: false,             // elements in copy-source containers can be reordered
             revertOnSpill: false,              // spilling will put the element back where it was dragged from, if this is true

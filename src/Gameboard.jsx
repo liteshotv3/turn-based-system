@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Zone from "./Zone";
 import "./styles/dragula.min.css"
 import { tokenZoneMovmentFunctionality } from "./config/dragulaConfig";
@@ -9,19 +9,19 @@ import { tokenZoneMovmentFunctionality } from "./config/dragulaConfig";
 
 function GameBoard(props) {
     const { tokens, zones } = props
-    const [gameState, setGameState] = useState({})
-    console.log({ zones })
-    const setUp = () => {
+    const [zoneState, setZoneState] = useState(createZoneState(zones))
 
-    }
 
-    const formattedZones = () => {
-        const buildArrays = (zone) => {
-            const array = [];
-            [...Array(zone.quantity)].forEach((_, i) => array.push(zone));
-            return array
-        }
-        return zones.map(zone => buildArrays(zone)).flat(2)
+    function createZoneState(zones) {
+        const zoneState = {}
+        zones.forEach(zoneType => {
+            for (let i = 0; i < zoneType.quantity; i++) {
+                zoneState[`${zoneType.name}-${i}`] = []
+            }
+        })
+        // special for testing:
+        zoneState["location-0"] = tokens
+        return zoneState
     }
 
     return <div
@@ -29,12 +29,12 @@ function GameBoard(props) {
         id="gameboard"
         className="gameboard container mx-3 mt-3 mb-3"
     >
+        {console.log({ zoneState })}
         {
-            formattedZones().map((eachZone, i) => <Zone
-                index={i + 1}
-                info={eachZone}
-                key={`zone-row-${i}`}
-                rowNumber={i} />)
+            Object.entries(zoneState).map((zone) => <Zone
+                key={`zone-${zone[0]}`}
+                name={zone[0]}
+                contents={zone[1]} />)
         }
         {/* each row is an array, needs an api to drop cards at the beginning, end, or between cards */}
     </div>

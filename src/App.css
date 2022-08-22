@@ -7,6 +7,7 @@
   border-radius: 10px;
   margin: 5px;
   padding: 10px;
+  min-height: 62px;
 }
 
 .zone .name-display {
@@ -17,7 +18,8 @@
   z-index: 0;
   color: #ccc;
   height: 42px;
-  text-align: center;
+  /* text-align: center; */
+  margin-left: 40px;
 }
 
 .zone .token {
