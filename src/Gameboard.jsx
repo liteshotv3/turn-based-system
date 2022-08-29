@@ -1,16 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Zone from "./Zone";
+import React, { useState } from "react";
+import Zones from "./Zones";
 import "./styles/dragula.min.css"
 import { tokenZoneMovmentFunctionality } from "./config/dragulaConfig";
-
-// const gameConfig = {
-//     cardRowsNumber: 6,
-// }
 
 function GameBoard(props) {
     const { tokens, zones } = props
     const [zoneState, setZoneState] = useState(createZoneState(zones))
-
 
     function createZoneState(zones) {
         const zoneState = {}
@@ -27,11 +22,11 @@ function GameBoard(props) {
     return <div
         ref={tokenZoneMovmentFunctionality}
         id="gameboard"
-        className="gameboard container mx-3 mt-3 mb-3"
+        className="gameboard"
     >
-        {console.log({ zoneState })}
+        {/* {console.log({ zoneState })} */}
         {
-            Object.entries(zoneState).map((zone) => <Zone
+            Object.entries(zoneState).map((zone) => <Zones
                 key={`zone-${zone[0]}`}
                 name={zone[0]}
                 contents={zone[1]} />)

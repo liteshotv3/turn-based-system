@@ -5,9 +5,10 @@ function Token(props) {
 
     return <div
         data-type="token"
-        className="token border col-1 mx-1 content-center">
+        className="token border"
+    >
         <div className="token-body">
-            <div className="token-title">{text}</div>
+            <div className="token-title unselectable">{text}</div>
             {/* <div className="card-body">card-body</div> */}
         </div>
     </div>

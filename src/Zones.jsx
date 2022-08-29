@@ -2,18 +2,20 @@ import React from 'react'
 import Token from './Token'
 
 
-function Zone(props) {
+function Zones(props) {
     const { name, contents } = props
     // const tokens = [...Array(5)]
-    console.log({ name, contents })
+    // console.log({ name, contents })
+    console.log(contents)
     return <div
         data-type="zone"
         id={`zone-${name}`}
-        className="zone row justify-content-md-center "
+        className="zone"
+        style={{ "border": "1px solid black" }}
     >
         <span className="name-display unselectable"><h3>{name}</h3></span>
         {contents.map((item, index) => <Token key={`token-${item.name}-${index}`} text={item.name} />)}
     </div >
 }
 
-export default Zone
+export default Zones

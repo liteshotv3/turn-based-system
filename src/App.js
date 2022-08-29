@@ -6,7 +6,7 @@ import { tokens, zones } from './config/marvelUnited.js'
 // console.log({ zones })
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Gameboard
         tokens={tokens}
         zones={zones}

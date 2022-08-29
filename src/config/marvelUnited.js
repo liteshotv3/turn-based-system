@@ -13,7 +13,10 @@ export const tokens = [
 export const zones = [
     {
         name: "location",
-        quantity: 6
+        quantity: 6,
+        placement: {
+            border: "1px solid green",
+        }
     },
     {
         name: "villainDeck",
