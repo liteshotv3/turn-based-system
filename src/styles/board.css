@@ -6,7 +6,7 @@
 }
 
 .board .turn-number {
-    text-align: "center",
+    text-align: 'center';
 }
 
 .controls {

@@ -1,25 +1,25 @@
 .App {
-  height:100vh;
+    height: 100vh;
 }
 
 .flex-container {
-  height: 100vh;
-  display: flex;
-  background-color: #f1f1f1;
+    height: 100vh;
+    display: flex;
+    background-color: #f1f1f1;
 }
 
 .board {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
 .game-state-debug-window {
-  background-color: rgb(41, 40, 40);
-  color: white;
-  width: 250px;
-  overflow: auto;
-  flex-grow: 0;
-  /* margin: 20px 0; */
-  border: 2px solid #ccc;
+    background-color: rgb(41, 40, 40);
+    color: white;
+    width: 250px;
+    overflow: auto;
+    flex-grow: 0;
+    /* margin: 20px 0; */
+    border: 2px solid #ccc;
 }
 /* 
 .App-logo {
