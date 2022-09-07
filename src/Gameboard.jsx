@@ -27,6 +27,7 @@ function GameBoard(props) {
         {/* {console.log({ zoneState })} */}
         {
             Object.entries(zoneState).map((zone) => <Zones
+                className="zone"
                 key={`zone-${zone[0]}`}
                 name={zone[0]}
                 contents={zone[1]} />)
